@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!</title>
     
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
         /* General page styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Updated font family to Poppins! */
+            font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
             min-height: 100vh;
             margin: 0;
@@ -18,7 +21,7 @@
             justify-content: center;
             align-items: center;
             color: #333;
-            overflow: hidden; /* Keeps the confetti from creating scrollbars */
+            overflow: hidden; 
         }
 
         /* The birthday card container */
@@ -32,7 +35,7 @@
             width: 90%;
             transition: transform 0.3s ease;
             position: relative;
-            z-index: 10; /* Keeps the card above the confetti */
+            z-index: 10;
         }
 
         .card:hover {
@@ -45,6 +48,7 @@
             font-size: 3.5em;
             margin: 0 0 10px 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            font-weight: 700; /* Bold Poppins */
         }
 
         p {
@@ -52,16 +56,18 @@
             line-height: 1.6;
             color: #555;
             margin-bottom: 30px;
+            font-weight: 400; /* Regular Poppins */
         }
 
         /* Interactive button */
         .surprise-btn {
+            font-family: 'Poppins', sans-serif; /* Ensuring the button uses Poppins too */
             background-color: #ff6b81;
             color: white;
             border: none;
             padding: 15px 35px;
             font-size: 1.2em;
-            font-weight: bold;
+            font-weight: 600; /* Semi-bold Poppins */
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
@@ -80,52 +86,8 @@
             margin-top: 25px;
             font-size: 1.5em;
             color: #2ed573;
-            font-weight: bold;
+            font-weight: 700;
             animation: fadeIn 1s;
         }
 
-        /* Simple fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="card">
-        <h1>Happy Birthday! 🎂</h1>
-        <p>Wishing you the most incredible day filled with laughter, joy, and all your favorite things. You deserve the best today and always!</p>
-        
-        <button class="surprise-btn" onclick="revealSurprise()">Click for a Surprise!</button>
-        
-        <div id="secret-message">
-            🎉 Have an awesome year ahead! 🎈
-        </div>
-    </div>
-
-    <script>
-        // This function runs when the button is clicked
-        function revealSurprise() {
-            const message = document.getElementById('secret-message');
-            const button = document.querySelector('.surprise-btn');
-            
-            // Show the hidden message
-            message.style.display = 'block';
-            
-            // Change the button text and color
-            button.innerText = 'Yay! 🥳';
-            button.style.backgroundColor = '#2ed573';
-            button.style.boxShadow = '0 5px 15px rgba(46, 213, 115, 0.4)';
-
-            // Fire the confetti!
-            confetti({
-                particleCount: 150,
-                spread: 80,
-                origin: { y: 0.6 } // Makes it burst slightly lower down so it arcs nicely
-            });
-        }
-    </script>
-
-</body>
-</html>
+        /* Simple fade-
